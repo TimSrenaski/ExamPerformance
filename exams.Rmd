@@ -1,0 +1,34 @@
+---
+title: "Exam Performance"
+author: "A.S., D.O."
+date: "December 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+http://roycekimmons.com/tools/generated_data/exams
+This dataset found on kaggle was pulled from this website. It is theoretically "exam scores for students at a public school". However, there is an interesting disclaimer at the end that says "All data sets are fictional and should be used for educational purposes only." That is a :thinking:
+
+## Package Load
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+## Load Data
+
+```{r}
+full <- read.csv("StudentsPerformance.csv", header = TRUE)
+dim(full)
+head(full)
+```
+
+So it doesn't seem like this dataset is too big. It's a smaller sample, relatively speaking. 1000 isn't a copious amount.
+
+We've got 5 indicators about people, their gender, their race (as described in a group, we don't know which correlate to which), their parents' level of education, their lunch situation (probably pointing to their financial situation), and whether they did a test prep course.
+
+To analyze, we have their writing, reading, and math scores.
