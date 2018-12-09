@@ -25,6 +25,7 @@ library(ggplot2)
 full <- read.csv("StudentsPerformance.csv", header = TRUE)
 dim(full)
 head(full)
+str(full)
 ```
 
 So it doesn't seem like this dataset is too big. It's a smaller sample, relatively speaking. 1000 isn't a copious amount.
@@ -32,3 +33,18 @@ So it doesn't seem like this dataset is too big. It's a smaller sample, relative
 We've got 5 indicators about people, their gender, their race (as described in a group, we don't know which correlate to which), their parents' level of education, their lunch situation (probably pointing to their financial situation), and whether they did a test prep course.
 
 To analyze, we have their writing, reading, and math scores.
+
+## Select Data
+```{r}
+math_score <- full$math.score
+ave_math <- mean(math_score)
+reading_score <- full$reading.score
+ave_reading <- mean(reading_score)
+writing_score <- full$writing.score
+ave_writing <- mean(writing_score)
+
+ave_math
+ave_reading
+ave_writing
+
+```
