@@ -17,6 +17,7 @@ This dataset found on kaggle was pulled from this website. It is theoretically "
 ```{r}
 library(dplyr)
 library(ggplot2)
+library(UsingR)
 ```
 
 ## Load Data
@@ -43,8 +44,35 @@ ave_reading <- mean(reading_score)
 writing_score <- full$writing.score
 ave_writing <- mean(writing_score)
 
-ave_math
-ave_reading
-ave_writing
+summary(math_score)
+summary(reading_score)
+summary(writing_score)
+
+```
+
+## Graph
+```{r}
+table(full$gender) %>% barplot(col = "red")
+
+hist(math_score, col = "green")
+
+hist(reading_score, col = "orange")
+
+hist(writing_score, col = "blue")
+
+# Comparing students lunch situation with their math scores 
+ggplot(data = full) + 
+  geom_boxplot(mapping = aes(x = factor(lunch), y = math_score, 
+                             fill = factor(lunch)))
+
+# Comparing students lunch situation with their reading scores
+ggplot(data = full) + 
+  geom_boxplot(mapping = aes(x = factor(lunch), y = reading_score, 
+                             fill = factor(lunch)))
+
+# Comparing students lunch situation with their math scores
+ggplot(data = full) + 
+  geom_boxplot(mapping = aes(x = factor(lunch), y = writing_score, 
+                             fill = factor(lunch)))
 
 ```
