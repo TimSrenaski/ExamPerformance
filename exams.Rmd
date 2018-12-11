@@ -47,6 +47,12 @@ ave_writing <- mean(writing_score)
 summary(math_score)
 summary(reading_score)
 summary(writing_score)
+IQR(math_score)
+IQR(reading_score)
+IQR(writing_score)
+sd(math_score)
+sd(reading_score)
+sd(writing_score)
 
 ```
 
