@@ -134,6 +134,8 @@ ggplot(data = full) +
 summary(math_score)
 IQR(math_score)
 sd(math_score)
+
+t.test(math_score~full2$lunch)
 ```
 
 
@@ -145,6 +147,8 @@ ggplot(data = full) +
 summary(reading_score)
 IQR(reading_score)
 sd(reading_score)
+
+t.test(reading_score~full2$lunch)
 ```
 # Comparing student's lunch situation with their writing scores
 ```{r}
@@ -154,6 +158,8 @@ ggplot(data = full) +
 summary(writing_score)
 IQR(writing_score)
 sd(writing_score)
+
+t.test(writing_score~full2$lunch)
 ```
 
 # Comparing student's lunch situation with their all exams average scores
@@ -164,4 +170,6 @@ ggplot(data = full2) +
 summary(all_exams)
 IQR(all_exams)
 sd(all_exams)
+
+t.test(all_exams~full2$lunch)
 ```

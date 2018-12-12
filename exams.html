@@ -391,6 +391,18 @@ full2$lunch[i_examsmax]</code></pre>
 <pre><code>## [1] 20</code></pre>
 <pre class="r"><code>sd(math_score)</code></pre>
 <pre><code>## [1] 15.16308</code></pre>
+<pre class="r"><code>t.test(math_score~full2$lunch)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  math_score by full2$lunch
+## t = -11.484, df = 667.5, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -13.01305  -9.21291
+## sample estimates:
+## mean in group free/reduced     mean in group standard 
+##                   58.92113                   70.03411</code></pre>
 </div>
 <div id="comparing-students-lunch-situation-with-their-reading-scores" class="section level1">
 <h1>Comparing student’s lunch situation with their reading scores</h1>
@@ -405,6 +417,18 @@ full2$lunch[i_examsmax]</code></pre>
 <pre><code>## [1] 20</code></pre>
 <pre class="r"><code>sd(reading_score)</code></pre>
 <pre><code>## [1] 14.60019</code></pre>
+<pre class="r"><code>t.test(reading_score~full2$lunch)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  reading_score by full2$lunch
+## t = -7.2926, df = 684.9, p-value = 8.422e-13
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -8.885594 -5.115891
+## sample estimates:
+## mean in group free/reduced     mean in group standard 
+##                   64.65352                   71.65426</code></pre>
 </div>
 <div id="comparing-students-lunch-situation-with-their-writing-scores" class="section level1">
 <h1>Comparing student’s lunch situation with their writing scores</h1>
@@ -419,6 +443,18 @@ full2$lunch[i_examsmax]</code></pre>
 <pre><code>## [1] 21.25</code></pre>
 <pre class="r"><code>sd(writing_score)</code></pre>
 <pre><code>## [1] 15.19566</code></pre>
+<pre class="r"><code>t.test(writing_score~full2$lunch)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  writing_score by full2$lunch
+## t = -7.8409, df = 685.25, p-value = 1.716e-14
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -9.754100 -5.847342
+## sample estimates:
+## mean in group free/reduced     mean in group standard 
+##                   63.02254                   70.82326</code></pre>
 </div>
 <div id="comparing-students-lunch-situation-with-their-all-exams-average-scores" class="section level1">
 <h1>Comparing student’s lunch situation with their all exams average scores</h1>
@@ -433,6 +469,18 @@ full2$lunch[i_examsmax]</code></pre>
 <pre><code>## [1] 19.33333</code></pre>
 <pre class="r"><code>sd(all_exams)</code></pre>
 <pre><code>## [1] 14.25733</code></pre>
+<pre class="r"><code>t.test(all_exams~full2$lunch)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  all_exams by full2$lunch
+## t = -9.3232, df = 674.61, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -10.457360  -6.818936
+## sample estimates:
+## mean in group free/reduced     mean in group standard 
+##                   62.19906                   70.83721</code></pre>
 </div>
 
 
