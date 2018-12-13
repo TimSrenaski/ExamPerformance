@@ -133,6 +133,7 @@ p3<- ggplot(data = full2) +
   xlab("Parents' Education") +
   ylab("Total Average Score")
 
+plot_grid(p1, p2, p3, ncol = 3, align = 'h', rel_widths = c(1, 1, 2))
 ```
 
 Let's also do t-tests for the two variables that have two different options.
