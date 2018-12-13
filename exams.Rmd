@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 http://roycekimmons.com/tools/generated_data/exams
 This dataset found on kaggle was pulled from this website. It is theoretically "exam scores for students at a public school". However, there is an interesting disclaimer at the end that says "All data sets are fictional and should be used for educational purposes only." That is a :thinking:
 
+
 ## Package Load
 
 ```{r}
@@ -34,6 +35,10 @@ So it doesn't seem like this dataset is too big. It's a smaller sample, relative
 We've got 5 indicators about people, their gender, their race (as described in a group, we don't know which correlate to which), their parents' level of education, their lunch situation (probably pointing to their financial situation), and whether they did a test prep course.
 
 To analyze, we have their writing, reading, and math scores.
+
+Null Hypothesis: There is no correction between total average exams and these co-variates.
+
+Alternative Hypothesis: At least one co-variable Correlates with total average exams.
 
 ## Select Data
 ```{r}
@@ -176,3 +181,25 @@ sd(all_exams)
 
 t.test(all_exams~full2$lunch)
 ```
+# Comparing student's test preparation course with their all average exams scores
+```{r}
+ggplot(data = full2) + 
+  geom_boxplot(mapping = aes(x = factor(test.preparation.course), y = all_exams, 
+                             fill = factor(test.preparation.course)))
+summary(all_exams)
+IQR(all_exams)
+sd(all_exams)
+
+t.test(all_exams~full2$test.preparation.course)
+```
+```{r}
+ggplot(data = full2) + 
+  geom_boxplot(mapping = aes(x = factor(parental.level.of.education), y = all_exams, 
+                             fill = factor(parental.level.of.education)))
+summary(all_exams)
+IQR(all_exams)
+sd(all_exams)
+
+```
+
+Therefore, we reject the null hypothesis. We know that lunch situations and test preparation courses are correlates with student exams score. We aren't sure if the students' parents education correlate with the exams. 
